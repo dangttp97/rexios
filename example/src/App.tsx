@@ -1,13 +1,11 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-rexios';
-
-const result = multiply(3, 7);
+import { View, StyleSheet } from 'react-native';
+import { NetworkProvider } from 'react-native-rexios';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <NetworkProvider>
+      <View style={styles.container} />
+    </NetworkProvider>
   );
 }
 
