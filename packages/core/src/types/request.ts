@@ -1,14 +1,13 @@
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 export type Headers = Record<string, string>;
-export type Body = Record<string, any> | string | null;
+export type Body = any;
 export type QueryParams = Record<string, any>;
-export type Params = Record<string, any>;
 
 export type RequestOptions = {
+  url: string;
   method: HttpMethod;
-  headers?: Headers;
+  headers?: Record<string, string>;
   body?: Body;
-  queryParams?: QueryParams;
-  params?: Params;
-  timeout?: number;
+  query?: QueryParams;
+  retryCount?: number;
 };

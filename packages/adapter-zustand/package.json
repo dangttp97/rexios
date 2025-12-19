@@ -1,0 +1,55 @@
+{
+  "name": "@rexios/zustand",
+  "version": "1.0.0",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    }
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "network",
+    "rexios"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangttp97/react-native-rexios.git"
+  },
+  "author": "Trần Thành Phương Đăng <phuongdang012@gmail.com> (https://github.com/dangttp97)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dangttp97/react-native-rexios/issues"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties"
+  ],
+  "scripts": {
+    "clean": "del-cli lib",
+    "prepare": "bob build",
+    "typecheck": "tsc",
+    "test": "jest",
+    "release": "release-it --only-version",
+    "lint": "eslint \"**/*.{js,ts,tsx}\""
+  },
+  "peerDependencies": {
+    "@rexios/core": "1.0.0",
+    "zustand": "*"
+  },
+  "devDependencies": {
+    "@rexios/core": "1.0.0",
+    "zustand": "^5.0.9"
+  }
+}

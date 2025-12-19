@@ -1,11 +1,22 @@
 import { View, StyleSheet } from 'react-native';
-import { NetworkProvider } from 'react-native-rexios';
+import { configureClient, type RequestClient } from '@rexios/core';
+import { RexiosProvider } from '@rexios/react';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
+const client = configureClient();
+
+const Root = () => {
+  return <View style={styles.container} />;
+};
 
 export default function App() {
   return (
-    <NetworkProvider>
-      <View style={styles.container} />
-    </NetworkProvider>
+    <Provider store={store}>
+      <RexiosProvider client={client as unknown as RequestClient}>
+        <Root />
+      </RexiosProvider>
+    </Provider>
   );
 }
 
