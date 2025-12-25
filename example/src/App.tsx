@@ -4,6 +4,7 @@ import { RexiosProvider, useRexiosClient } from '@rexios/react';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { useEffect, useState } from 'react';
+import { PATH } from './network/path';
 
 const client = createClient({
   baseURL: 'https://jsonplaceholder.typicode.com',
@@ -25,14 +26,14 @@ const Root = () => {
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    query('getTodos', {
+    query('getAllPosts', {
       request: {
         method: 'GET',
-        url: '/posts',
+        url: PATH.GET_ALL_POSTS,
       },
-    }).then((data) => {
-      console.log(data);
-      setData(data);
+    }).then((d) => {
+      console.log(d);
+      setData(d);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

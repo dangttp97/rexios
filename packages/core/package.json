@@ -1,37 +1,28 @@
 {
   "name": "@rexios/core",
+  "private": false,
   "version": "1.0.0",
   "main": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "types": "./lib/typescript/index.d.ts",
   "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./lib/typescript/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
     "./types": {
       "source": "./src/types/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
+      "types": "./lib/typescript/types/index.d.ts",
       "default": "./lib/module/index.js"
     },
     "./client": {
       "source": "./src/client/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
+      "types": "./lib/typescript/client/index.d.ts",
       "default": "./lib/module/index.js"
     },
     "./cache": {
       "source": "./src/cache/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
-    },
-    "./persist": {
-      "source": "./src/persist/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
-    },
-    "./runtime": {
-      "source": "./src/runtime/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
-    },
-    "./pipeline": {
-      "source": "./src/pipeline/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
+      "types": "./lib/typescript/cache/index.d.ts",
       "default": "./lib/module/index.js"
     }
   },
@@ -61,6 +52,29 @@
     "!android/gradlew.bat",
     "!android/local.properties"
   ],
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true,
+          "sourceMaps": false
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "./tsconfig.build.json",
+          "tsc": "../../node_modules/typescript/bin/tsc"
+        }
+      ]
+    ]
+  },
   "scripts": {
     "build": "bob build",
     "clean": "del-cli lib",

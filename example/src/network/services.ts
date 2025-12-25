@@ -11,6 +11,7 @@ export const useAppServices = () => {
         request: {
           method: 'GET',
           url: PATH.GET_TODOS(id),
+          dedupe: true,
         },
       });
     },

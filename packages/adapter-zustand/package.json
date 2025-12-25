@@ -1,12 +1,13 @@
 {
   "name": "@rexios/zustand",
+  "private": false,
   "version": "1.0.0",
   "main": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "types": "./lib/typescript/index.d.ts",
   "exports": {
     ".": {
       "source": "./src/index.ts",
-      "types": "./lib/typescript/src/index.d.ts",
+      "types": "./lib/typescript/index.d.ts",
       "default": "./lib/module/index.js"
     }
   },
@@ -36,6 +37,26 @@
     "!android/gradlew.bat",
     "!android/local.properties"
   ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true,
+          "sourceMaps": false
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "./tsconfig.build.json",
+          "tsc": "../../node_modules/typescript/bin/tsc"
+        }
+      ]
+    ]
+  },
   "scripts": {
     "build": "bob build",
     "clean": "del-cli lib",
@@ -51,6 +72,7 @@
   },
   "devDependencies": {
     "@rexios/core": "1.0.0",
+    "typescript": "^5.9.2",
     "zustand": "^5.0.9"
   }
 }

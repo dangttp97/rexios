@@ -3,4 +3,5 @@ export const PATH = {
   POST_TODOS: () => `/todos`,
   PUT_TODOS: (id: string) => `/todos/${id}`,
   DELETE_TODOS: (id: string) => `/todos/${id}`,
+  GET_ALL_POSTS: `/posts`,
 };

@@ -29,7 +29,7 @@
   },
   "private": true,
   "devDependencies": {
-    "react-native-builder-bob": "^0.40.13",
+    "react-native-builder-bob": "patch:react-native-builder-bob@npm%3A0.40.17#~/.yarn/patches/react-native-builder-bob-npm-0.40.17-d6060e8dd7.patch",
     "react-native-monorepo-config": "^0.3.1"
   }
 }
