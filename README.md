@@ -1,4 +1,4 @@
-# react-native-rexios
+# rexios
 
 Pure JS network client inspired by Redux, Axios interceptors, and TanStack Query.
 
