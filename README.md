@@ -14,9 +14,13 @@ Pure JS network client inspired by Redux, Axios interceptors, and TanStack Query
 ```sh
 # core + react bindings
 npm install @rexios/core @rexios/react
+# Or
+yarn add @rexios/core @rexios/react
 
 # optional adapters
 npm install @rexios/redux @rexios/zustand
+# Or
+yarn add @rexios/redux @rexios/zustand
 ```
 
 ## Quickstart (React/React Native)
