@@ -4,7 +4,7 @@ Pure JS network client inspired by Redux, Axios interceptors, and TanStack Query
 
 ## Highlights
 
-- ✅ Works anywhere `fetch` exists (or you inject one): React Native, Node, Next, Nest, Angular, React
+- ✅ Works anywhere `fetch` exists: React Native, Node, Next, Nest, Angular, React
 - ✅ KoaJS Middleware pipeline (`before/after/onError`)
 - ✅ Cache with tags, stale/background refresh, dedupe/serial requests, retry, timeout
 - ✅ Adapter-ready cache stores (in-memory, Redux, Zustand)
